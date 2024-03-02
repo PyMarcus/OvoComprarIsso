@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OvoComprarIsso</string>
+    <string name="username">Usuário</string>
+    <string name="password">Senha</string>
+    <string name="login">Acessar</string>
+    <string name="register">Registrar-se!</string>
+    <string name="product">Nome do produto</string>
+    <string name="type">Tipo</string>
+
+</resources>

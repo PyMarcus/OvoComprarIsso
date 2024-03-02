@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_cleaning"
+        android:title="Limpeza" />
+    <item
+        android:id="@+id/menu_food"
+        android:title="Alimento" />
+    <item
+        android:id="@+id/menu_drink"
+        android:title="Bebida" />
+</menu>
