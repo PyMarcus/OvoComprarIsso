@@ -5,6 +5,6 @@
     <string name="login">Acessar</string>
     <string name="register">Registrar-se!</string>
     <string name="product">Nome do produto</string>
-    <string name="type">Tipo</string>
+    <string name="type">Categoria</string>
 
 </resources>

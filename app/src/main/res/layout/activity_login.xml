@@ -76,6 +76,7 @@
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
 

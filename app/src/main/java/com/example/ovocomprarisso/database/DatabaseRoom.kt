@@ -10,7 +10,7 @@ import com.example.ovocomprarisso.repository.ItemsDAO
 import com.example.ovocomprarisso.repository.UserDAO
 
 
-@Database(entities = [UserEntity::class, ItemEntity::class], version = 1, exportSchema = false)
+@Database(entities = [UserEntity::class, ItemEntity::class], version = 2, exportSchema = false)
 abstract class DatabaseRoom(): RoomDatabase() {
 
     abstract fun userDAO(): UserDAO

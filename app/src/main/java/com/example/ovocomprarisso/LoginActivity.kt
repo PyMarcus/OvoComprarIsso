@@ -8,6 +8,7 @@ import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ovocomprarisso.controllers.UserController
 import com.example.ovocomprarisso.databinding.ActivityLoginBinding
+import com.example.ovocomprarisso.models.UserEntity
 
 class LoginActivity : AppCompatActivity(), OnClickListener{
 
@@ -43,6 +44,10 @@ class LoginActivity : AppCompatActivity(), OnClickListener{
 
         if(this.userController.getUserLogin(username, password)){
             val intent = Intent(this, ItemsActivity::class.java)
+            val user: UserEntity? = this.userController.getUser(username)
+            if(user?.id != null){
+                intent.putExtra("userId", user.id.toString())
+            }
             startActivity(intent)
         }else{
             this.showAlert("Error", "Verifique seus dados e tente novamente!")

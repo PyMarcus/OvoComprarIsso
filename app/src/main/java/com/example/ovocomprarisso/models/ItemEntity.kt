@@ -9,9 +9,10 @@ import androidx.room.PrimaryKey
 class ItemEntity {
     constructor()
 
-    constructor(item: String, userId: Long){
+    constructor(item: String, userId: Long, type: String){
         this.item = item
         this.userId = userId
+        this.type = type
     }
 
     @PrimaryKey(autoGenerate = true)
@@ -20,6 +21,9 @@ class ItemEntity {
 
     @ColumnInfo(name = "item")
     var item: String = ""
+
+    @ColumnInfo(name = "type")
+    var type: String = ""
 
     @ColumnInfo(name = "user_id")
     var userId: Long = 0L
