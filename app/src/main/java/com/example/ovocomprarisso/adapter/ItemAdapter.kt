@@ -22,7 +22,7 @@ class ItemAdapter(private var items: MutableList<ItemEntity>,private var itemCon
         holder: ItemAdapter.
         ItemHolder, position: Int
     ) {
-        holder.bind(items[position], itemController, position, context)
+        holder.bind(items[position], itemController, context)
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +30,7 @@ class ItemAdapter(private var items: MutableList<ItemEntity>,private var itemCon
     }
 
     fun removeItem(position: Int) {
-        if (position >= 0 && position < items.size) {
+        if (position in 0 until items.size) {
             items.removeAt(position)
             notifyItemRemoved(position)
         }
@@ -38,7 +38,7 @@ class ItemAdapter(private var items: MutableList<ItemEntity>,private var itemCon
 
     inner class ItemHolder(private var binding: ItemListBinding):
         RecyclerView.ViewHolder(binding.root){
-            fun bind(item: ItemEntity, itemController: ItemController, position: Int, context: Context){
+            fun bind(item: ItemEntity, itemController: ItemController, context: Context){
                 binding.productItem.text = item.item
                 val img = when (item.type) {
                     "alimento" -> R.drawable.food
@@ -52,7 +52,7 @@ class ItemAdapter(private var items: MutableList<ItemEntity>,private var itemCon
                 }
                 binding.trash.setOnClickListener {
                     itemController.remove(item)
-                    removeItem(position)
+                    removeItem(adapterPosition)
                 }
         }
     }
